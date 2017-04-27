@@ -1,0 +1,20 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<h1>Welcome, {{displayName}}</h1>
+	<button ion-button (click)="login()" type="submit" block>Login</button>
+	<button ion-button (click)="logout()" type="submit" block>Logout</button>
+</ion-content>

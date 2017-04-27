@@ -1,0 +1,54 @@
+<!--
+  Generated template for the RateFoodPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>RateFood</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<form #loginForm="ngForm" novalidate>
+		<ion-list no-lines>
+			<ion-item>
+				<ion-label stacked color="primary">Name</ion-label>
+				<ion-input [(ngModel)]="data.name" disabled="true" name="name" type="text" #name="ngModel" spellcheck="false" autocapitalize="off">
+				</ion-input>
+			</ion-item>
+
+			<ion-item>
+		    <ion-label>Rating</ion-label>
+		    <ion-select [(ngModel)]="data.rating" name="rating" #rating="ngModel">
+		      <ion-option value="1">1</ion-option>
+		      <ion-option value="2">2</ion-option>
+		      <ion-option value="3">3</ion-option>
+		      <ion-option value="4">4</ion-option>
+		      <ion-option value="5">5</ion-option>
+		    </ion-select>
+		  </ion-item>
+		  <p ion-text [hidden]="rating.valid || submitted == false" color="danger" padding-left>
+				Rating is required
+			</p>
+			<ion-item>
+				<ion-label stacked color="primary">Review</ion-label>
+				<ion-textarea [(ngModel)]="data.review" name="review" #review="ngModel" required>
+				</ion-textarea>
+			</ion-item>
+			<p ion-text [hidden]="review.valid || submitted == false" color="danger" padding-left>
+				Review is required
+			</p>
+		</ion-list>
+		
+		<ion-row responsive-sm>
+			<ion-col>
+				<button ion-button (click)="rate()" type="submit" block>Submit</button>
+			</ion-col>
+		</ion-row>
+	</form>
+</ion-content>
